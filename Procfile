@@ -1,1 +1,1 @@
-worker: sh ./run ng:build && sh ./run sails
+work: sh ./run ng:build && sh ./run sails
