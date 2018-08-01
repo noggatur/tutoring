@@ -3,7 +3,7 @@
   "version": 3,
   "newProjectRoot": "projects",
   "projects": {
-    "abracadabra": {
+    "Tutoring": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/abracadabra",
+            "outputPath": "dist/Tutoring",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -55,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "abracadabra:build"
+            "browserTarget": "Tutoring:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "abracadabra:build:production"
+              "browserTarget": "Tutoring:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "abracadabra:build"
+            "browserTarget": "Tutoring:build"
           }
         },
         "test": {
@@ -105,7 +105,7 @@
         }
       }
     },
-    "abracadabra-e2e": {
+    "Tutoring-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "abracadabra:serve"
+            "devServerTarget": "Tutoring:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "abracadabra:serve:production"
+              "devServerTarget": "Tutoring:serve:production"
             }
           }
         },

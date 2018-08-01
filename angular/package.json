@@ -1,5 +1,5 @@
 {
-  "name": "abracadabra",
+  "name": "Tutoring",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --source-map --extract-css --base-href /abracadabra/ && gh-pages -d dist/abracadabra"
+    "deploy": "ng build --prod --source-map --extract-css --base-href /Tutoring/ && gh-pages -d dist/Tutoring"
   },
   "private": true,
   "dependencies": {
