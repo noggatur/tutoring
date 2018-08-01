@@ -43,9 +43,9 @@ function show_logs {
 function build_assets_for_deployment {
   cd angular
   ng build --prod --extract-css --output-path ../assets
+  cd ../
   git add assets
   git commit -m "updating assets for deployment"
-  cd ../
 }
 
 function deploy_app {
