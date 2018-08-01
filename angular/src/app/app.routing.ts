@@ -1,10 +1,21 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
-import { MainComponent } from "./main/main.component";
+import { LandingComponent } from "./landing/landing.component";
+import { AccountComponent } from "./account/account.component";
 
 const APP_ROUTES: Routes = [
-  { path: '', component: MainComponent },
+  { path: '', component: LandingComponent },
+  { path: 'account', component: AccountComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
-// передаём пути на экспорт
-export const routing = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+  imports: [
+    RouterModule.forRoot(APP_ROUTES, { useHash: true })
+  ],
+  exports: [
+    RouterModule
+  ],
+  providers: []
+})
+export class AppRouterModule {}

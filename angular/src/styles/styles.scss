@@ -21,3 +21,37 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1200px) {} // lg
 
 
+h1 {
+  width: 100%;
+  margin-top: 40px;
+}
+
+p {
+  display: block;
+  width: 100%;
+}
+
+// валидация форм
+input.ng-touched { //.ng-touched
+  &.ng-valid {
+    border-color: $green;
+    background-color: lighten($green, 40);
+
+    & ~ .fa-check {
+      display: inline-block;
+    }
+  }
+
+  &.ng-invalid {
+    border-color: $red;
+    background-color: lighten($red, 40);
+
+    & ~ .fa-times {
+      display: inline-block;
+    }
+  }
+}
+
+.text-italic {
+  font-style: italic;
+}

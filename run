@@ -5,16 +5,23 @@ function process_script_request {
   else
     case $1 in
       help) show_help;;
+      ng) build_assets;;
       logs) show_logs;;
       deploy) deploy_app;;
-      deploy:test) git push -f heroku-test master;;
+      deploy:test) deploy_test_app;;
     esac
   fi
 }
 
 function show_help {
   echo "What to do?"
-  echo "logs  deploy'"
+  echo "help  ng  logs  deploy  deploy:test"
+}
+
+function build_assets {
+  cd angular
+  ng build --watch --extract-css --output-path "../assets"
+  cd ../
 }
 
 function show_logs {
@@ -25,6 +32,10 @@ function deploy_app {
   git co production
   git merge master
   git co master
+}
+
+function deploy_test_app {
+  git push -f heroku-test master
 }
 
 process_script_request $1
