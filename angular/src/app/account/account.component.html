@@ -8,11 +8,33 @@
     <h1>Личный кабинет</h1>
   </div>
   <div class="row">
-    <p>Сделать</p>
-    <ul>
-      <li>Личные кабинеты для родителя и менеджера</li>
-      <li>Чатик</li>
-    </ul>
+    <div class="col-2">
+      <div class="avatar">
+        <fa-layers class="fa-5x fa-fw">
+          <fa-icon [icon]="['fas', 'user']"></fa-icon>
+        </fa-layers>
+      </div>
+    </div>
+    <div class="col">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Ребёнок</th>
+            <th scope="col">Пакект услуг</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Вася</td>
+            <td>Full</td>
+          </tr>
+          <tr>
+            <td>Оля</td>
+            <td>Бич</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
