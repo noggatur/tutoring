@@ -7,6 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
+  profiles = [
+    {
+      type: "Родитель",
+      icon: "user-graduate"
+    },
+    {
+      type: "Ребёнок",
+      icon: "user-graduate"
+    },
+    {
+      type: "Репетитор",
+      icon: "user-graduate"
+    }
+  ];
+
   constructor(
     private router: Router
   ) {}
