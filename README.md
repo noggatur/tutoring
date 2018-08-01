@@ -1,4 +1,4 @@
-# tutoring
+# Online Tutoring
 
 a [Sails v1](https://sailsjs.com) application
 
