@@ -1,0 +1,23 @@
+#!/bin/bash
+function process_script_request {
+  if [[ $# -eq 0 ]]; then
+    echo "What to do? 'logs' || 'deploy'"
+  else
+    case $1 in
+      logs) show_logs;;
+      deploy) git push -f heroku-test master;;
+    esac
+  fi
+}
+
+function show_logs {
+  heroku logs --tail --app online-tutoring
+}
+
+function deploy_app {
+  git co production
+  git merge master
+  git co master
+}
+
+process_script_request
