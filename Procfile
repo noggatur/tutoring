@@ -1,1 +1,1 @@
-worker: ng build --production && sails lift
+worker: sh ./run ng:build && sh ./run sails
