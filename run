@@ -26,13 +26,13 @@ function start_server {
 
 function build_assets {
   cd angular
-  ng build --extract-css --output-path "../assets"
+  ng build --extract-css
   cd ../
 }
 
 function build_and_watch_assets {
   cd angular
-  ng build --watch --extract-css --output-path "../assets"
+  ng build --watch --extract-css
   cd ../
 }
 
