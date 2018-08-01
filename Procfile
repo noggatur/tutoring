@@ -1,1 +1,1 @@
-worker: echo "ng build" && sails lift
+worker: sh ./run ng:build && sh ./run sails
