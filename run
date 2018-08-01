@@ -5,9 +5,8 @@ function process_script_request {
   else
     case $1 in
       help) show_help;;
-      sails) start_server;;
-      ng) build_and_watch_assets;;
-      ng:build) build_assets;;
+      sails) serve_backend;;
+      ng) update_and_watch_assets;;
       logs) show_logs;;
       deploy) deploy_app;;
       deploy:test) deploy_test_app;;
@@ -17,20 +16,14 @@ function process_script_request {
 
 function show_help {
   echo "What to do?"
-  echo "help  sails  ng  ng:build  logs  deploy  deploy:test"
+  echo "help  sails  ng   logs  deploy  deploy:test"
 }
 
-function start_server {
+function serve_backend {
   sails lift
 }
 
-function build_assets {
-  cd angular
-  ng build --extract-css
-  cd ../
-}
-
-function build_and_watch_assets {
+function update_and_watch_assets {
   cd angular
   ng build --watch --extract-css
   cd ../
@@ -41,10 +34,19 @@ function show_logs {
 }
 
 function deploy_app {
+  build_assets_for_deployment
   git co production
   git merge master
   git push
   git co master
+}
+
+function build_assets_for_deployment {
+  cd angular
+  ng build --prod --extract-css --output-path ../assets
+  git add assets
+  git commit -m "updating assets for deployment"
+  cd ../
 }
 
 function deploy_test_app {

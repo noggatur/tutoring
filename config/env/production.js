@@ -391,6 +391,7 @@ module.exports = {
 
   },
 
-
-
+  paths: {
+    public: process.env.NODE_ENV === 'production' ? 'assets' : 'angular/dist'
+  }
 };

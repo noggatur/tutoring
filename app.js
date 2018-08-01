@@ -26,8 +26,6 @@
 // > Note: This is not required in order to lift, but it is a convenient default.
 process.chdir(__dirname);
 
-
-
 // Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
 var sails;
 var rc;
@@ -48,7 +46,6 @@ try {
   console.error('(It even uses your app directory\'s local Sails install, if possible.)');
   return;
 }//-•
-
 
 // Start server
 sails.lift(rc('sails'));
