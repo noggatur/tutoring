@@ -3,3 +3,15 @@
   top: 5px;
   right: 5px;
 }
+
+.role {
+  background-color: #eee;
+  cursor: pointer;
+  margin: 10px;
+  padding: 50px 30px;
+  text-align: center;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}

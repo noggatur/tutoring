@@ -6,13 +6,13 @@
 <div class="container">
   <div class="row text-center justify-content-center">
     <h1>Войти как</h1>
-    <div class="mt-5">
+    <div>
       <div class="row">
-        <div class="col" *ngFor="let profile of profiles" (click)="login()">
+        <div class="col role" *ngFor="let profile of profiles" (click)="login()">
           <fa-layers class="fa-5x fa-fw">
             <fa-icon [icon]="['fas', profile.icon]"></fa-icon>
           </fa-layers>
-          <p>{{ profile.type }}</p>
+          <p class="mt-2">{{ profile.type }}</p>
         </div>
       </div>
     </div>

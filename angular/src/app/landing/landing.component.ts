@@ -10,11 +10,11 @@ export class LandingComponent implements OnInit {
   profiles = [
     {
       type: "Родитель",
-      icon: "user-graduate"
+      icon: "user-tie"
     },
     {
       type: "Ребёнок",
-      icon: "user-graduate"
+      icon: "child"
     },
     {
       type: "Репетитор",
