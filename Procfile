@@ -1,0 +1,1 @@
+worker: echo "ng build" && sails lift
