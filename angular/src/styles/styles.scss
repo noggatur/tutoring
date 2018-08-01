@@ -31,6 +31,10 @@ p {
   width: 100%;
 }
 
+.table-striped:hover {
+  cursor: pointer;
+}
+
 // валидация форм
 input.ng-touched { //.ng-touched
   &.ng-valid {

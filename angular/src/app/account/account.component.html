@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col">
-      <table class="table">
+      <table class="table table-striped table-hover">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Ребёнок</th>
@@ -24,17 +24,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Вася</td>
-            <td>Full</td>
-          </tr>
-          <tr>
-            <td>Оля</td>
-            <td>Бич</td>
+          <tr *ngFor="let kid of kids">
+            <td>{{ kid.name }}</td>
+            <td>{{ kid.package }}</td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
+  <div class="row mt-3">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of tabs">
+        <a class="nav-link" [ngClass]="{active: selectedTab === tab.title}" (click)="selectTab($event, tab.title)" href="#">{{ tab.titleRus }}</a>
+      </li>
+    </ul>
   </div>
 </div>
 
