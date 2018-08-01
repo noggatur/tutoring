@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -6,14 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  @Output() loggedIn = new EventEmitter();
-
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
 
   login() {
-    this.loggedIn.emit('logged in');
+    this.router.navigate(['/account']);
   }
 }

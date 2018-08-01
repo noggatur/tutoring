@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -6,14 +7,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-  @Output() loggedOut = new EventEmitter();
-
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
 
   logout() {
-    this.loggedOut.emit('logged out');
+    this.router.navigate(['/']);
   }
 }
