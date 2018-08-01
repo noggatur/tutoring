@@ -43,6 +43,7 @@ function show_logs {
 function deploy_app {
   git co production
   git merge master
+  git push
   git co master
 }
 
