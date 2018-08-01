@@ -1,13 +1,20 @@
 #!/bin/bash
 function process_script_request {
   if [[ $# -eq 0 ]]; then
-    echo "What to do? 'logs' || 'deploy'"
+    show_help
   else
     case $1 in
+      help) show_help;;
       logs) show_logs;;
-      deploy) git push -f heroku-test master;;
+      deploy) deploy_app;;
+      deploy:test) git push -f heroku-test master;;
     esac
   fi
+}
+
+function show_help {
+  echo "What to do?"
+  echo "logs  deploy'"
 }
 
 function show_logs {
@@ -20,4 +27,4 @@ function deploy_app {
   git co master
 }
 
-process_script_request
+process_script_request $1
