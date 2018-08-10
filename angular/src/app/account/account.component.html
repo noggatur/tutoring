@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let kid of kids">
+          <tr *ngFor="let kid of kids" (click)="kidInfo.isShown = true">
             <td>{{ kid.name }}</td>
             <td>{{ kid.package }}</td>
           </tr>
@@ -32,12 +32,18 @@
       </table>
     </div>
   </div>
-  <div class="row mt-3">
-    <ul class="nav nav-tabs">
-      <li class="nav-item" *ngFor="let tab of tabs">
-        <a class="nav-link" [ngClass]="{active: selectedTab === tab.title}" (click)="selectTab($event, tab.title)" href="#">{{ tab.titleRus }}</a>
-      </li>
-    </ul>
+  <div class="kid-info" *ngIf="kidInfo.isShown">
+    <div class="row mt-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let tab of tabs">
+          <a class="nav-link" [ngClass]="{active: selectedTab === tab.title}" (click)="selectTab($event, tab.title)" href="#">{{ tab.titleRus }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <iframe *ngIf="kidInfo.calendar.isShown" src="https://calendar.google.com/calendar/embed?src=igor_polyakov%40phystech.edu&ctz=Europe%2FMoscow" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+
   </div>
 </div>
 

@@ -26,6 +26,12 @@ export class AccountComponent implements OnInit {
     }
   ];
   selectedTab = this.tabs[0].title;
+  kidInfo = {
+    isShown: false,
+    calendar: {
+      isShown: false
+    }
+  };
 
   kids = [
     {
@@ -52,5 +58,10 @@ export class AccountComponent implements OnInit {
   selectTab(event, tab) {
     event.preventDefault();
     this.selectedTab = tab;
+    if (tab === "schedule") {
+      this.kidInfo.calendar.isShown = true;
+    } else {
+      this.kidInfo.calendar.isShown = false;
+    }
   }
 }

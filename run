@@ -11,6 +11,7 @@ function process_script_request {
       front:prod) build_assets_for_deployment;;
       logs) show_logs;;
       deploy) deploy_app;;
+      redeploy) redeploy_app;;
       deploy:test) deploy_test_app;;
       gen:local) generate_local_conf;;
     esac
@@ -68,6 +69,10 @@ function generate_local_conf {
   echo "    public: 'angular/dist'"  >> $localjs
   echo "  }"  >> $localjs
   echo "};"  >> $localjs
+}
+
+function redeploy_app {
+  heroku restart --app online-tutoring
 }
 
 process_script_request $1
